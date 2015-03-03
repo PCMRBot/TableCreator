@@ -124,7 +124,7 @@ public class Database {
         try{
             stmt8=conn.createStatement();
             stmt8.closeOnCompletion();
-            stmt8.executeUpdate(String.format("CREATE TABLE %s.%sCommands(command varchar(25), parameters varchar(255), PRIMARY KEY (command))", DATABASE, channelNoHash));
+            stmt8.executeUpdate(String.format("CREATE TABLE %s.%sCommands(command varchar(25), parameters varchar(255), reply varchar(4000), PRIMARY KEY (command))", DATABASE, channelNoHash));
         }catch(SQLException ex){
             logger.log(Level.INFO, "Commands table already exists!");
         }
